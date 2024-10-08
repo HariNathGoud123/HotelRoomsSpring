@@ -69,8 +69,8 @@ public class RoomJpaService implements RoomRepository {
 			if (room.getRoomNumber() != null) {
 				newRoom.setRoomNumber(room.getRoomNumber());
 			}
-			if (room.getType() != null) {
-				newRoom.setType(room.getType());
+			if (room.getRoomType() != null) {
+				newRoom.setRoomType(room.getRoomType());
 			}
 			if (room.getPrice() != 0) {
 				newRoom.setPrice(room.getPrice());
@@ -92,11 +92,12 @@ public class RoomJpaService implements RoomRepository {
 	public void deleteRoom(int roomId) {
 		try {
 			roomJpaRepository.deleteById(roomId);
+			throw new ResponseStatusException(HttpStatus.NO_CONTENT);
 
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
-		throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+
 	}
 
 	@Override
