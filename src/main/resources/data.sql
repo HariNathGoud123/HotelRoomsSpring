@@ -1,4 +1,4 @@
-INSERT INTO hotel (hotelname, location, rating) VALUES
+INSERT INTO hotel (name, location, rating) VALUES
 ('The Plaza Hotel', 'New York', 4),
 ('The Beverly Hills Hotel', 'Los Angeles', 5),
 ('The Langham', 'Chicago', 3);
