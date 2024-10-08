@@ -52,7 +52,8 @@ public class RoomController {
   }
 
   @GetMapping("/rooms/{roomId}/hotel")
-  public Hotel getRoomHotel(@PathVariable("roomId") int roomId) {
+  public Hotel hetRoomHotel(@PathVariable("roomId") int roomId) {
     return roomJpaService.getRoomHotel(roomId);
   }
+
 }
