@@ -80,10 +80,11 @@ public class HotelJpaService implements HotelRepository {
 	public void deleteHotel(int hotelid) {
 		try {
 			hotelJpaRepository.deleteById(hotelid);
+			throw new ResponseStatusException(HttpStatus.NO_CONTENT);
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
-		throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+
 	}
 
 	@Override
