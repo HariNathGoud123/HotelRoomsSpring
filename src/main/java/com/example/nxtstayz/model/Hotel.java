@@ -15,11 +15,11 @@ public class Hotel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "hotelid")
+    @Column(name = "id")
 
     private int hotelId;
 
-    @Column(name = "hotelname")
+    @Column(name = "name")
     private String hotelName;
 
     @Column(name = "location")
