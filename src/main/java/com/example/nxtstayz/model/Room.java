@@ -1,3 +1,4 @@
+
 /*
  *
  * You can use the following import statements
@@ -21,7 +22,7 @@ public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "roomid")
+    @Column(name = "id")
 
     private int roomId;
 
@@ -29,7 +30,7 @@ public class Room {
     private String roomNumber;
 
     @Column(name = "type")
-    private String type;
+    private String roomType;
 
     @Column(name = "price")
     private double price;
@@ -43,11 +44,12 @@ public class Room {
     }
 
     // Argument constructor (excluding hotel for simplicity)
-    public Room(int roomId, String roomNumber, String type, double price) {
+    public Room(int roomId, String roomNumber, String roomType, double price, Hotel hotel) {
         this.roomId = roomId;
         this.roomNumber = roomNumber;
-        this.type = type;
+        this.roomType = roomType;
         this.price = price;
+        this.hotel = hotel;
     }
 
     // Getters and setters
@@ -63,16 +65,16 @@ public class Room {
         return roomNumber;
     }
 
-    public void setRoomNumber(String roomName) {
+    public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
     }
 
-    public String getType() {
-        return type;
+    public String getRoomType() {
+        return roomType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
     }
 
     public double getPrice() {
