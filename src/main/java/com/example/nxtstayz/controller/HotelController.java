@@ -49,7 +49,7 @@ public class HotelController {
   }
 
   @GetMapping("/hotels/{hotelId}/rooms")
-  public List<Room> getHotelroooms(@PathVariable("hotelId") int hotelid) {
+  public List<Room> getHotelrooms(@PathVariable("hotelId") int hotelid) {
     return hotelJpaService.getHotelRooms(hotelid);
   }
 
