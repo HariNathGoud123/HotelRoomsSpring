@@ -44,8 +44,8 @@ public class HotelController {
   }
 
   @DeleteMapping("/hotels/{hotelId}")
-  public void deleteHotel(@PathVariable("hotelId") int hotelid) {
-    hotelJpaService.deleteHotel(hotelid);
+  public void deleteHotel(@PathVariable int hotelId) {
+    hotelJpaService.deleteHotel(hotelId);
   }
 
   @GetMapping("/hotels/{hotelId}/rooms")
