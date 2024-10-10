@@ -92,11 +92,11 @@ public class RoomJpaService implements RoomRepository {
 	public void deleteRoom(int roomId) {
 		try {
 			roomJpaRepository.deleteById(roomId);
-			throw new ResponseStatusException(HttpStatus.NO_CONTENT);
 
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
+		throw new ResponseStatusException(HttpStatus.NO_CONTENT);
 
 	}
 
