@@ -77,14 +77,14 @@ public class HotelJpaService implements HotelRepository {
 	}
 
 	@Override
-	public void deleteHotel(int hotelid) {
+	public void deleteHotel(int hotelId) {
 		try {
-			hotelJpaRepository.deleteById(hotelid);
-			throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+			hotelJpaRepository.deleteById(hotelId);
+
 		} catch (Exception e) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		}
-
+		throw new ResponseStatusException(HttpStatus.NO_CONTENT);
 	}
 
 	@Override
